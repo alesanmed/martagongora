@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/public';
 import { fetchBlogImages } from '$lib/images';
 import { fetchTranslation } from '$lib/api/translations';
 import type { PageServerLoad } from '../$types';
@@ -14,6 +15,7 @@ export const load: PageServerLoad<OutputData> = async ({
 
 	return {
 		images,
-		translations
+		translations,
+		recaptchaSiteKey: env.PUBLIC_RECAPTCHA_SITE_KEY?.trim() ?? ''
 	};
 };

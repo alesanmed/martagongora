@@ -22,7 +22,7 @@
 	</p>
 	<div>
 		<img src={images.contact.src} alt={tImage(images.contact.alt || '', text)} aria-hidden="true" />
-		<Form content={text.form} />
+		<Form content={text.form} recaptchaSiteKey={data.recaptchaSiteKey ?? ''} />
 	</div>
 </section>
 
